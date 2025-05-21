@@ -1,0 +1,65 @@
+0334000086
+ticket da pagare al torneo
+L'associazione sportiva Kombat Inc. necessita di un software per la gestione di tornei.
+Il software deve prevedere l'utilizzo di un database relazionale per immagazzinare dati relativi a tornei di: MMA, K1, BJJ, Karate, taekwondo.
+Ad ogni torneo possono essere associate una o più gare/incontri, ad ogni incontro possono partecipare minimo zero massimo due atleti.
+Il software dovrà creare in automatico gli accoppiamenti tra atleti nella stessa categoria.
+C'è la possibilità per un torneo di rendere le iscrizioni a pagamento, il software dovrà gestire anche questa eventualità.
+
+Un torneo è caratterizzato da:
+    - Nome
+    - Grado minimo richiesto (opzionale)
+    - partecipanti
+    - organizzatori
+    - luogo
+    - data
+    - podio
+    - Disciplina
+
+Un incontro è caratterizzato da:
+    - Angolo Blu
+    - Angolo Rosso
+    - ID
+    - Esito (B o R)
+    - Ora
+    - Categoria
+
+Gli utenti dell'applicazione si dividono in: organizzatori, coach, atleti, arbitri.
+
+Gli organizzatori sono caratterizzati da:
+    - Nome
+    - Cognome
+    - email
+    - Federazione di appartenenza
+    - Numero di tessera
+
+I coach sono caratterizzati da: 
+    - Nome
+    - Cognome
+    - Palestra di appartenenza
+    - email
+    - Numero di tessera
+    - grado/cintura
+
+Gli atleti sono caratterizzati da:
+    - Nome
+    - Cognome
+    - Numero di tessera
+    - Palestra di appartenenza
+    - grado/cintura
+    - categoria di peso
+    - medaglie
+    - storico incontri
+
+Gli arbitri sono caratterizzati da:
+    - Nome
+    - Cognome
+    - Email
+    - Numero di tessera
+    - Età
+
+Il software deve prevedere la registrazione di nuovi utenti e il login tramite email e password.
+
+Un organizzatore può partecipare all'organizzazione di una o più gare, un coach può iscrivere zero o più atleti ad un torneo e un atleta può
+partecipare a più gare anche nello stesso giorno.
+
