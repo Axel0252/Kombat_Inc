@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Tornei{% endblock %}
+
+{% block content %}
+        <div>
+            {% for torneo in tornei %}
+                <p class="text-white">
+                    Torneo in data: {{torneo.data}} <br>
+                    Luogo: {{torneo.luogo}} <br>
+                    Disciplina: {{torneo.disciplina}} <br>
+                    Grado minimo richiesto: {{torneo.gradoMin}} <br>
+                    1° Posto: {{torneo.podio.oro}} <br>
+                    2° Posto: {{torneo.podio.argento}} <br>
+                    3° Posto: {{torneo.podio.bronzo}} <br>
+                </p>
+            {% endfor %}
+        </div>
+{% endblock %}

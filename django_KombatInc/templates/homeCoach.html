@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Coach | Home{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <p class="fs-2 text-white">
+        Benvenuto, Coach {{ data.cognome }}
+    </p> <br>
+
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-text">
+                    <!-- NON implementata -->
+                    <a href="iscrivi_atleta" class="btn btn-primary">Iscrivi Atleta</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+</div>
+
+
+{% endblock %}

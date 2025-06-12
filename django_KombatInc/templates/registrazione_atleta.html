@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Registrati{% endblock %}
+
+{% block content %}
+
+{{ error_message }}
+
+<form method="post" action="/registra_atleta">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="email" class="form-label text-white">Email </label><br>
+        <input type="email" class="form-control bg-dark text-white" id="email" name="email"><br>
+    </div>
+
+    <div class="mb-3">
+        <label for="passw" class="text-white form-label">Password </label><br>
+        <input type="password" class="form-control bg-dark text-white" id="passw" name="passw"><br>
+    </div>
+    
+    <div class="mb-3">
+        <label for="nome" class="text-white form-label">Nome </label><br>
+        <input type="text" class="form-control bg-dark text-white" id="nome" name="nome"><br>
+    </div>
+
+    <div class="mb-3">
+        <label for="cognome" class="text-white form-label">Cognome </label><br>
+        <input type="text" class="form-control bg-dark text-white" id="cognome" name="cognome"><br>
+    </div>  
+
+    <div class="mb-3">
+        <label for="numTess" class="text-white form-label">Numero di tessera </label><br>
+        <input type="text" class="form-control bg-dark text-white" id="numTess" name="numTess"><br>
+    </div>
+
+    <div class="mb-3">
+        <label for="cintura" class="text-white form-label">Cintura </label><br>
+        <select name="cintura" id="cintura" class="form-select bg-dark text-white">
+            <option selected>Seleziona la tua cintura</option>
+            <option value="W">Bianca</option>
+            <option value="G">Gialla</option>
+            <option value="B">Blu</option>
+            <option value="M">Marrone</option>
+            <option value="N">Nera</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria" class="text-white form-label">Categoria di peso </label><br>
+        <select name="categoria" id="categoria" class="form-select bg-dark text-white">
+            <option selected>Seleziona la categoria di peso</option>
+            <option value="65 Kg">65 Kg</option>
+            <option value="70 Kg">70 Kg</option>
+            <option value="75 Kg">75 Kg</option>
+            <option value="80 Kg">80 Kg</option>
+        </select>
+    </div>
+        
+    <button type="submit" class="btn btn-primary">Invia</button>
+    
+</form>
+
+{% endblock %}

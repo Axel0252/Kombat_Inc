@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Incontro{% endblock %}
+
+{% block content %}
+
+    <p class="fs-2 text-white">
+        Incontro {{ incontro.data }}, {{ incontro.ora }}
+    </p> <br>
+
+    <p class="fs-3 text-white">
+        Arbitraggio: {{ arbitro.nome }} {{ arbitro.cognome }}
+    </p> <br>
+    
+    <p class="fs-3 text-white">
+        Categoria: {{ incontro.categoria }}
+    </p> <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        Angolo Rosso
+                    </div>
+                    <div class="card-text">
+                        {{ incontro.angoloR }}
+
+                        {% if esito == R %}
+                            <p class="text-success">
+                                Vincitore
+                            </p>
+                        {% else %}
+                            <p class="text-danger">
+                                Perdente
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        Angolo Blu
+                    </div>
+                    <div class="card-text">
+                        {{ incontro.angoloB }}
+
+                        {% if esito == B %}
+                            <p class="text-success">
+                                Vincitore
+                            </p>
+                        {% else %}
+                            <p class="text-danger">
+                                Perdente
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+
+{% block title %}Area Personale{% endblock %}
+
+{% block content %}
+
+    <h2 class="text-white text-center">
+        Dati Personali
+    </h2>
+
+    <form method="POST" action="modifyData">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="{{type}}">
+
+        <input type="hidden" name="old_email" value="{{user.email}}">
+        
+        <label for="nome" class="form-label text-white">Nome</label>
+        <input type="text" class="form-control bg-success text-black" name="nome" id="nome" placeholder="{{user.nome}}" value="{{user.nome}}">
+
+        <label for="cognome" class="form-label text-white">Cognome</label>
+        <input type="text" class="form-control bg-success text-black" name="cognome" id="cognome" placeholder="{{user.cognome}}" value="{{user.cognome}}">
+
+        <label for="passw" class="form-label text-white">Password</label>
+        <input type="password" class="form-control bg-success text-black" name="passw" id="passw" value="{{user.password}}">
+
+        <label for="email" class="form-label text-white">Email address</label>
+        <input type="email" class="form-control bg-success text-black" name="email" id="email" placeholder="{{user.email}}" value="{{user.email}}">
+
+        <label for="numTess" class="form-label text-white">Numero di Tessera Federazione</label>
+        <input type="text" class="form-control bg-success text-black" id="numTess" name="numTess" placeholder="{{user.numTessera}}" disabled>
+
+        {% if user.età %}
+        <label for="età" class="form-label text-white">Età</label>
+        <input type="text" class="form-control bg-success text-black" id="età" name="età" placeholder="{{user.età}}" disabled>
+        {% endif %}
+
+        {% if user.federazione %}
+        <label for="federazione" class="form-label text-white">Federazione</label>
+        <input type="text" class="form-control bg-success text-blck" id="federazione" name="federazione" placeholder="{{user.federazione}}" value="{{user.federazione}}">
+        {% endif %}
+
+        {% if user.palestra %}
+        <label for="palestra" class="form-label text-white">Palestra</label>
+        <input type="text" class="form-control bg-success text-black" id="palestra" name="palestra" placeholder="{{user.palestra}}" value="{{user.palestra}}">
+        {% endif %}
+
+        {% if user.grado %}
+        <label for="grado" class="form-label text-white">Grado</label>
+        <input type="text" class="form-control bg-success text-black" id="grado" name="grado" placeholder="{{user.grado}}" value="{{user.grado}}">
+        {% endif %}
+
+        {% if user.cintura %}
+            <label for="cintura" class="text-white form-label">Cintura </label><br>
+            <select name="cintura" id="cintura" class="form-select bg-success text-black" value="{{user.cintura}}">
+                <option selected>{{user.cintura}}</option>
+                <option value="W">Bianca</option>
+                <option value="G">Gialla</option>
+                <option value="B">Blu</option>
+                <option value="M">Marrone</option>
+                <option value="N">Nera</option>
+            </select>
+        {% endif %}
+
+        {% if user.categoria %}
+        <label for="categoria" class="text-white form-label">Categoria di peso </label><br>
+        <select name="categoria" id="categoria" class="form-select bg-success text-black" value="{{user.categoria}}">
+            <option selected> {{user.categoria}} </option>
+            <option value="65 Kg">65 Kg</option>
+            <option value="70 Kg">70 Kg</option>
+            <option value="75 Kg">75 Kg</option>
+            <option value="80 Kg">80 Kg</option>
+        </select>
+        {% endif %}
+        
+        <br>
+        <button type="submit" class="btn btn-primary">Salva</button>
+
+    </form>
+
+{% endblock %}

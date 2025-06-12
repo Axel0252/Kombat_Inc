@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Registrati{% endblock %}
+
+{% block content %}
+
+{{ error_message }}
+
+<div class="row justify-content-center">
+    <p class="text-white text-center fs-2">
+        Chi vuoi registrare?
+    </p>
+    <div class="d-grid gap-2 col-6 md-auto">
+        <a href="/registrazione_coach" class="btn btn-success text-dark btn-lg">Coach</a>
+        <a href="/registrazione_atleta" class="btn btn-success text-dark btn-lg">Atleta</a>
+    </div>
+</div>
+
+{% endblock %}

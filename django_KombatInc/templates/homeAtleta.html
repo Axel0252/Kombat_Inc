@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Atleta | Home{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <p class="fs-2 text-white">
+        Benvenuto, {{ data.nome }} {{ data.cognome }}
+    </p> <br>
+
+    {% if data.storico != None %}
+            <h2 class="text-white">Storico Incontri</h2>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{data.storico.data}}</h5>
+                            {% if storico.angoloR == data.nome|add:" "|add:data.cognome %}
+                                <p class="card-text text-success"> Vittoria </p>
+                            {% else %}
+                                <p class="card-text text-danger"> Sconfitta </p>
+                            {% endif %}
+                            
+                            <form method="POST" action="/visualizza_incontro">
+                                {% csrf_token %}
+                                <input type="hidden" id="id_incontro" name="id_incontro" value="{{data.storico.id_incontro}}">
+                                <button type="submit" class="btn btn-success">Visualizza</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="justify-content-center">
+                        <form method="POST" action="area_personale">
+                            {% csrf_token %}
+                            <input type="hidden" name="type" id="type" value="{{type}}">
+                            <input type="hidden" name="passw" id="passw" value="{{data.password}}">
+                            <input type="hidden" name="email" id="email" value="{{data.email}}">
+                            <button type="submit" class="btn btn-primary">Area Personale</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+    <br>
+</div>
+
+
+{% endblock %}

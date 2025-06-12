@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Organizzatore | Home{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <p class="fs-2 text-white">
+        Benvenuto, {{data.nome}} {{ data.cognome }}
+    </p> <br>
+
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-text">
+                    <!-- NON implementata -->
+                    <a href="crea_torneo" class="btn btn-primary">Crea torneo</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+</div>
+
+
+{% endblock %}

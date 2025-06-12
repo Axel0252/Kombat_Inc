@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Registrati{% endblock %}
+
+{% block content %}
+
+{{ error_message }}
+
+<form method="post" action="/registra_coach">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="email" class="form-label text-white">Email </label><br>
+        <input type="email" class="form-control bg-dark text-white" id="email" name="email"><br>
+    </div>
+
+    <div class="mb-3">
+        <label for="passw" class="text-white form-label">Password </label><br>
+        <input type="password" class="form-control bg-dark text-white" id="passw" name="passw"><br>
+    </div>
+    
+    <div class="mb-3">
+        <label for="nome" class="text-white form-label">Nome </label><br>
+        <input type="text" class="form-control bg-dark text-white" id="nome" name="nome"><br>
+    </div>
+
+    <div class="mb-3">
+        <label for="cognome" class="text-white form-label">Cognome </label><br>
+        <input type="text" class="form-control bg-dark text-white" id="cognome" name="cognome"><br>
+    </div>   
+
+    <div class="mb-3">
+        <label for="numTess" class="text-white form-label">Numero di tessera </label>
+        <input type="text" class="form-control bg-dark text-white" id="numTess" name="numTess">
+    </div>
+    
+    <div class="mb-3">
+        <label for="grado" class="text-white form-label">Grado </label>
+        <select name="grado" id="grado" class="form-select bg-dark text-white">
+            <option selected>Seleziona il tuo grado</option>
+            <option value="1">1 dan</option>
+            <option value="2">2 dan</option>
+            <option value="3">3 dan</option>
+            <option value="4">4 dan</option>
+            <option value="5">5 dan</option>
+        </select>
+    </div>
+        
+    <button type="submit" class="btn btn-primary">Invia</button>
+    
+</form>
+
+{% endblock %}
