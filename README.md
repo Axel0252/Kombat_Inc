@@ -2,6 +2,10 @@
 
 Tafuro Alessandro 0334000086
 
+Web App sviluppata in Python Django, si possono eseguire login con gli utenti di prova o registrarne dei nuovi (il database è locale).
+Per alcune funzionalità esiste solo il template ma non sono state implementate (Iscrivi atleta e crea torneo).
+
+
 ## Installazione
 Per scaricare la repository eseguire il comando:
 ```
