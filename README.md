@@ -33,3 +33,50 @@ Per avviare il server eseguire:
 ```
 py manage.py runserver
 ```
+
+Gli utenti già registrati sono
+Arbitri:
+```
+email: roberto.bianchi@example.com
+passw: arb123
+
+email: sara.rossi@example.com
+passw: arb456
+
+email:antonio.verdi@example.com
+passw: arb789
+```
+Atleti:
+```
+luca.bianchi@example.com
+pass123
+
+anna.verdi@example.com
+pass456
+
+marco.rossi@example.com
+pass789
+```
+Coach:
+```
+federico.marroni@example.com
+coach123
+
+chiara.blu@example.com
+coach456
+
+luigi.verdi@example.com
+coach789
+```
+Organizzatori:
+```
+giorgio.neri@example.com
+org123
+
+elisa.blu@example.com
+org456
+
+paolo.verde@example.com
+org789
+```
+
